@@ -53,3 +53,31 @@ for i in range(len(items)):
     print(f'#{i+1} {items[i][0]} = {items[i][1]}')# indexing
 for rank,(brand,year) in enumerate(items,1): # use enumerate instead of indexing
     print(f'#{rank} {brand} = {year}')
+    
+# Item 8: Use zip to Process Iterators in Parallel
+
+cars=('toyota','bmw','aston_martin','porsche')
+
+counts=list(len(n) for n in cars) # list comprehensions
+print(counts)
+
+longest_name=None
+max_count=0
+
+for i in range(len(cars)):
+    count=counts[i]
+    if count>max_count:
+        max_count,longest_name=count,cars[i]
+print(longest_name)
+
+for i,name in enumerate(cars):
+    count=counts[i]
+    if count>max_count:
+        max_count,longest_name=count,cars[i]
+print(longest_name)
+
+for car,count in zip(cars,counts):
+    count=counts[i]
+    if count>max_count:
+        max_count,longest_name=count,cars[i]
+print(longest_name)
