@@ -56,28 +56,72 @@ for rank,(brand,year) in enumerate(items,1): # use enumerate instead of indexing
     
 # Item 8: Use zip to Process Iterators in Parallel
 
-cars=('toyota','bmw','aston_martin','porsche')
+cars=['toyota','bmw','aston_martin','porsche']
 
 counts=list(len(n) for n in cars) # list comprehensions
 print(counts)
 
 longest_name=None
 max_count=0
-
 for i in range(len(cars)):
     count=counts[i]
     if count>max_count:
         max_count,longest_name=count,cars[i]
 print(longest_name)
 
+longest_name=None
+max_count=0
 for i,name in enumerate(cars):
     count=counts[i]
     if count>max_count:
         max_count,longest_name=count,cars[i]
 print(longest_name)
 
+longest_name=None
+max_count=0
 for car,count in zip(cars,counts):
-    count=counts[i]
     if count>max_count:
-        max_count,longest_name=count,cars[i]
+        max_count,longest_name=count,car
 print(longest_name)
+
+import itertools
+longest_name=None
+max_count=0
+cars.append('ferrari')
+for car,count in itertools.zip_longest(cars,counts):
+    print(car,count)
+
+# Item 9: Avoid else Blocks After for and while Loops
+
+for i in range(3):
+    print(i)
+else: # else block runs
+    print('for block compleated')
+for i in range(3):
+    if i == 2:
+        break
+    else:
+        print(i)
+else: # else block dosen't run
+    print('for block incompleated cause of break')
+
+for x in []:
+    print('This is skipped for empty list')
+else:
+    print('directly prints this')
+
+while False:
+    print('This is skipped')
+else:
+    print('directly prints this')
+
+def coprime(a,b):
+    for i in range(2,min(a,b)+1):
+        if a%i==0 and b%i==0:
+            print('Not coprime')
+            break
+    else:
+        print('Coprime')
+coprime(3,11)
+
+# Item 10: Prevent Repetition with Assignment Expressions
