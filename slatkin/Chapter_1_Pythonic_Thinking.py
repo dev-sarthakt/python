@@ -125,3 +125,32 @@ def coprime(a,b):
 coprime(3,11)
 
 # Item 10: Prevent Repetition with Assignment Expressions
+
+def lemonade(count):
+    print(count,'lemons squeezed')
+
+fresh_fruit = {
+'apple': 10,
+'banana': 8,
+'lemon': 5,
+}
+
+count=fresh_fruit.get('lemon',0) # here 0 is the default value in case lemon dosent exist
+if count:
+    lemonade(count)
+
+if count:=fresh_fruit.get('lemon',0): # walrus operator
+    lemonade(count)
+
+count=fresh_fruit.get('lemon',0)
+if count>=4:
+    lemonade(count)
+
+if (count:=fresh_fruit.get('lemon',0))>=4:
+    lemonade(count)
+
+fruits=list(fruit for fruit,_ in fresh_fruit.items())
+fruits.extend(['mango', 'dragonfruit'])
+print(fruits)
+fruits.append(['grapes','strawberry'])
+print(fruits)
