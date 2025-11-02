@@ -4,7 +4,7 @@ Libraries include : sys, time, json, requests, pygame, math, tkinter
 
 To run :
 
-Step 0) Ensure all above mentioned lib are installed.
+Step 0) Ensure all above mentioned lib are installed and all the above project files are in the same folder.
 
 Step 1) Open terminal in the directory where all the SeisGuard files are stored.
 
