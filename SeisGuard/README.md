@@ -5,7 +5,10 @@ Libraries include : sys, time, json, requests, pygame, math, tkinter
 To run :
 
 Step 0) Ensure all above mentioned lib are installed.
+
 Step 1) Open terminal in the directory where all the SeisGuard files are stored.
+
 Step 2) Run the following command : python3 ./SeisGuard.py.
+
 
 Thank You ;)
