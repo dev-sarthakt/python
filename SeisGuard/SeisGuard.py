@@ -11,12 +11,10 @@ url = 'https://ipinfo.io/json'
 
 def eas():
     pygame.mixer.init()
-    pygame.mixer.music.load('eas.ogg')
+    pygame.mixer.music.load('eas.mp3')
     pygame.mixer.music.play()
     while pygame.mixer.music.get_busy():
         time.sleep(1)
-    
-    eas()
 
 def usgs():
     current_time = time.localtime()
